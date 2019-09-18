@@ -8,23 +8,25 @@
                 
                 <div class="slide-top content-center">
                     <%= form_for(@user) do |f| %>
+                        <%= render 'shared/error_messages' %>
+
                         <%= f.label :Lei %>
-                        <%= f.text_field :herName %>
+                        <%= f.text_field :herName, class: 'form-control' %>
 
                         <%= f.label :Lui %>
-                        <%= f.text_field :hisName %>
+                        <%= f.text_field :hisName, class: 'form-control' %>
 
                         <%= f.label :data_di_fidanzamento %>
-                        <%= f.date_field :anniversary %>
+                        <%= f.date_field :anniversary, class: 'form-control' %>
 
                         <%= f.label :email %>
-                        <%= f.text_field :email %>
+                        <%= f.text_field :email, class: 'form-control' %>
 
                         <%= f.label :password %>
-                        <%= f.password_field :password %>
+                        <%= f.password_field :password, class: 'form-control' %>
 
                         <%= f.label :password_confirmation, "Conferma della password" %>
-                        <%= f.password_field :password_confirmation %>
+                        <%= f.password_field :password_confirmation, class: 'form-control' %>
 
                         <%= f.submit "Crea il nostro account", class: "btn btn-primary" %>
                     <% end %>
