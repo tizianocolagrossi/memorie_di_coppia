@@ -3,12 +3,17 @@
   <head>
     <title>MemorieDiCoppia</title>
     <%= csrf_meta_tags %>
-    <link href=".\app\assets\stylesheets\webslides.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src=".\app\assets\javascripts\webslides.min.js"></script>
+    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "webslides" %>
+    <%= javascript_include_tag "webslides.min", "data-turbolinks-track" => true  %>
+    
 
   </head>
 
   <body>
     <%= yield %>
+    <div class="debug_dump">
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>
