@@ -1,28 +1,36 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<article id="webslides">
+    <section class="bg-gradient-h">
+    
+    <div class="wrap">
+        
+            
+                
+                <div class="slide-top content-center">
+                    <%= form_for(@user) do |f| %>
+                        <%= f.label :Lei %>
+                        <%= f.text_field :herName %>
 
-<div class="row">
-  <div class="col-6 col-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :hisName %>
-      <%= f.text_field :hisName %>
+                        <%= f.label :Lui %>
+                        <%= f.text_field :hisName %>
 
-      <%= f.label :herName %>
-      <%= f.text_field :herName %>
+                        <%= f.label :data_di_fidanzamento %>
+                        <%= f.date_field :anniversary %>
 
-      <%= f.label :date %>
-      <%= f.date_field :anniversary %>
+                        <%= f.label :email %>
+                        <%= f.text_field :email %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+                        <%= f.label :password_confirmation, "Conferma della password" %>
+                        <%= f.password_field :password_confirmation %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+                        <%= f.submit "Crea il nostro account", class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            
+        
+    </div>
+    </section>
+</article>
