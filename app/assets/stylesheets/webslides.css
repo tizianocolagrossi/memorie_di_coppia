@@ -1800,7 +1800,7 @@ footer .column h3 {
   .column .flexblock.features > li {
     width: 100%; }
   footer .flexblock.features > li {
-    margin-bottom: 0; } }
+    margin-bottom: 0px !important; } }
 
 /*=====================================================================
 6.2 Clients Logos <ul class="flexblock clients">
@@ -3073,7 +3073,7 @@ svg {
 
 [class*='bg-'] a,
 [class*='bg-gradient-'] a {
-  color: #bce; }
+  color: #FFDB9D; }
 
 .bg-brown a {
   color: #c23; }
@@ -3082,10 +3082,10 @@ a,
 .bg-white a,
 .bg-light a,
 .bg-gradient-white a {
-  color: #44d; }
+  color: #F79320; }
 
 a:hover {
-  color: #3af; }
+  color: #FF9902; }
 
 .flexblock li > a,
 [class*='bg-'] li > a,
@@ -3140,7 +3140,7 @@ Slides - Backgrounds <section class="bg-primary">
 ================================================== */
 /*3 Corp Colors*/
 .bg-primary {
-  background-color: #44d; }
+  background-color: #F79320; }
 
 .bg-secondary {
   background-color: #67d; }
@@ -3174,6 +3174,14 @@ Slides - Backgrounds <section class="bg-primary">
 
 .bg-white {
   background-color: #fff; }
+
+.bg-yellow{
+  background-color: #C9761A;
+}
+
+.bg-ocean{
+  background-color: #29657D;
+}
 
 .bg-facebook {
   background-color: #3b5998; }
@@ -3223,16 +3231,16 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Horizontal Gradient*/
 .bg-gradient-h {
-  background: linear-gradient(134deg, #32b 0, #62b 100%); }
+  background: linear-gradient(134deg, #29657D 0, #77A1AE 100%); }
 
 /*Vertical Gradient*/
 .bg-gradient-v {
-  background: -webkit-gradient(linear, left bottom, left top, from(#62b), to(#32b));
-  background: linear-gradient(to top, #62b 0%, #32b 100%); }
+  background: -webkit-gradient(linear, left bottom, left top, from(#77A1AE), to(#29657D));
+  background: linear-gradient(to top, #77A1AE 0%, #29657D 100%); }
 
 /*Radial Gradient*/
 .bg-gradient-r {
-  background: radial-gradient(ellipse at center, #62b 0%, #32b 100%); }
+  background: radial-gradient(ellipse at center, #77A1AE 0%, #29657D 100%); }
 
 /*White Gradient (vertical)*/
 .bg-gradient-white {
@@ -3673,7 +3681,7 @@ input[type='submit'],
 .button:hover,
 button[type='submit']:hover,
 input[type='submit']:hover {
-  border: 1px solid #44d; }
+  border: 1px solid #F79320; }
 
 button[type='submit'],
 input[type='submit'],
@@ -3681,7 +3689,7 @@ input[type='submit'],
 .button:hover,
 button[type='submit']:hover,
 input[type='submit']:hover {
-  background-color: #44d;
+  background-color: #F79320;
   color: #fff;
   text-shadow: 0 1px 0 #123; }
 
@@ -3711,7 +3719,7 @@ input[type='submit']:active {
 
 .bg-white a.button.ghost,
 .bg-gradient-white a.button.ghost {
-  border: 1px solid #44d;
+  border: 1px solid #F79320;
   color: #333; }
 
 :disabled,
@@ -3722,7 +3730,7 @@ button:disabled:hover {
 
 fieldset {
   background-color: rgba(0, 20, 80, 0.2);
-  border: 1px solid #44d; }
+  border: 1px solid #F79320; }
 
 legend {
   background-color: rgba(0, 0, 0, 0.6);
