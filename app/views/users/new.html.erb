@@ -4,8 +4,6 @@
     
     <div class="wrap">
         
-            
-                
                 <div class="slide-top content-center">
                     <%= form_for(@user) do |f| %>
                         <%= render 'shared/error_messages' %>
@@ -27,12 +25,11 @@
 
                         <%= f.label :password_confirmation, "Conferma della password" %>
                         <%= f.password_field :password_confirmation, class: 'form-control' %>
-
+                        
                         <%= f.submit "Crea il nostro account", class: "btn btn-primary" %>
                     <% end %>
                 </div>
-            
-        
+              
     </div>
     </section>
 </article>
