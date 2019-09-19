@@ -1,0 +1,7 @@
+<section class="bg-primary">
+    <div class="wrap">
+      <h2 class="text-landing"><%= micropost.title %></h2>
+      <p class="text-intro"><%= micropost.content %></p>
+      <p class="text-subtitle"> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
+    </div>
+</section>

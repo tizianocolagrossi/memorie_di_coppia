@@ -42,5 +42,11 @@
                 </ul>
             </div>
         </section>
+        <!-- AGGIUNGERE I RICORDI QUI-->
+
+        <% if @user.microposts.any? %>
+            <%= render @microposts %>
+        <% end %>
+
     </article>
 </main>
