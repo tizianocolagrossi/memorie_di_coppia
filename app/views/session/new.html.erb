@@ -1,0 +1,31 @@
+<article id="webslides">
+    <section class="bg-gradient-h">
+    
+    <div class="wrap">
+                
+                <% flash.each do |key, value| %>
+                    <div class="flash <%= key %>"><%= value %></div>
+                <% end %>
+                
+                <div class="slide-top content-center">
+                    <%= form_for( :session, url: login_path) do |f| %>
+
+                        <%= f.label :email %>
+                        <%= f.text_field :email, class: 'form-control' %>
+
+                        <%= f.label :password %>
+                        <%= f.password_field :password, class: 'form-control' %>
+
+                        <%= f.label :remember_me, class: "checkbox inline" do %>
+                            <%= f.check_box :remember_me %>
+                            <span>Ricordami su questo dispositivo</span>
+                        <% end %>
+
+                        <%= f.submit "Log in", class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+                <p>Non sei ancora registrato? <%= link_to "registrati ora!", signup_path %></p>
+        
+    </div>
+    </section>
+</article>
