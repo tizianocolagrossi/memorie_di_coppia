@@ -15,3 +15,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( webslides.css )
 Rails.application.config.assets.precompile += %w( webslides.min.js )
+
+Rails.application.config.assets.precompile += %w( svg-icons.css )
+Rails.application.config.assets.precompile += %w( svg-icons.js )

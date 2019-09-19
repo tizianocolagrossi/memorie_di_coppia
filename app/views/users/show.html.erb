@@ -1,2 +1,46 @@
-<%= @user.herName %>, <%= @user.hisName %>, <%= @user.email %>, <%= @user.anniversary %>
-<%= link_to "Log out", logout_path, method: "delete" %><%= link_to "Settings", edit_user_path(current_user) %>
+<main role='banner'>
+    <article id='webslide'>
+        <section class='slide'>
+            <header>
+                <div class="wrap">
+                    <p>
+                        <%= link_to "Log out", logout_path, method: "delete" %>
+                        
+                        
+                        <!--<span class="alignright"><%= link_to "Settings", edit_user_path(current_user) %></span>-->
+                    </p>
+                </div>
+            </header>
+            <div class="wrap aligncenter">
+                <p class="text-subtitle">
+                    <%= @user.herName %> 
+                    <svg class="fa-heart">
+                        <use xlink:href="#fa-heart"></use>
+                    </svg>
+                    <%= @user.hisName %><br>
+                    <%= @user.anniversary %>
+                </p>
+                <h2 class="text-landing"><strong>Ti cielo</strong></h2>
+                <blockquote>
+                    <p>
+                        "Non assomigli più a nessuna da quando ti amo."
+                        <cite>Pablo Neruda</cite>
+                    </p>
+                </blockquote>
+                <hr>
+                <ul class="flexblock">
+                    <li><h2>
+                    <svg class="fa-plus">
+                        <use xlink:href="#fa-plus"></use>
+                    </svg>
+                    Aggiungi</h2>crea il nostro oceano</li>
+                    <li><h2>
+                    <svg class="fa-play">
+                        <use xlink:href="#fa-play"></use>
+                    </svg>
+                    Ricorda</h2>vediamo quante gocce ci sono nel nostro oceano</li>
+                </ul>
+            </div>
+        </section>
+    </article>
+</main>

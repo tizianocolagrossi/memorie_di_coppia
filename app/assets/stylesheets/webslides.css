@@ -1800,7 +1800,7 @@ footer .column h3 {
   .column .flexblock.features > li {
     width: 100%; }
   footer .flexblock.features > li {
-    margin-bottom: 0; } }
+    margin-bottom: 0px !important; } }
 
 /*=====================================================================
 6.2 Clients Logos <ul class="flexblock clients">
