@@ -40,7 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
-  # gem 'sqlite3', '~>1.3.13'
+  
 end
 
 group :development do
@@ -56,3 +56,4 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 gem 'pg',             '0.17.1'
 gem 'rails_12factor', '0.0.2'
+gem 'sqlite3', '~>1.3.13'
