@@ -54,5 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #paperclip per upload immagini
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
+gem 'sqlite3', '~> 1.3.13'
+
 gem 'pg',             '0.17.1'
 gem 'rails_12factor', '0.0.2'
