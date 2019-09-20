@@ -40,7 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~>1.3.13'
+  # gem 'sqlite3', '~>1.3.13'
 end
 
 group :development do
@@ -54,7 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #paperclip per upload immagini
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
-group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
-end
+gem 'pg',             '0.17.1'
+gem 'rails_12factor', '0.0.2'
