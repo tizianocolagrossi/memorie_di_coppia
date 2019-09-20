@@ -1,10 +1,14 @@
 <article id="webslides">
     <section class="bg-apple">
     <div class="wrap">
-        <%= form_for(@micropost) do |f| %>
+        <%= form_for @micropost, html: { multipart: true }  do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :title, "Titolo" %>
             <%= f.text_field :title %>
+            <div class="field">
+                <%= f.label :image, "Immagine" %>
+                <%= f.file_field :image %>
+            </div>
             <%= f.label :content , "Scrivi il tuo ricordo" %>
             <div class="field">
                 <%= f.text_area :content, placeholder: "C'era una volta..." %>
