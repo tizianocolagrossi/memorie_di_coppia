@@ -55,6 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :production do
-  gem 'pg',             '0.17.1'
+  gem 'pg'
   gem 'rails_12factor', '0.0.2'
 end
