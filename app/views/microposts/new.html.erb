@@ -1,20 +1,22 @@
 <article id="webslides">
     <section class="bg-apple">
     <div class="wrap">
-        <%= form_for @micropost, html: { multipart: true }  do |f| %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <%= f.label :title, "Titolo" %>
-            <%= f.text_field :title %>
-            <div class="field">
+        <div class="slide-top content-center">
+            <%= form_for @micropost, html: { multipart: true }  do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+                <%= f.label :title, "Titolo" %>
+                <%= f.text_field :title %>
+                
                 <%= f.label :image, "Immagine" %>
                 <%= f.file_field :image %>
-            </div>
-            <%= f.label :content , "Scrivi il tuo ricordo" %>
-            <div class="field">
-                <%= f.text_area :content, placeholder: "C'era una volta..." %>
-            </div>
-            <%= f.submit "Ricordalo per sempre", class: "btn btn-primary" %>
-        <% end %>   
+                
+                <%= f.label :content , "Scrivi il tuo ricordo" %>
+                <div class="field">
+                    <%= f.text_area :content, placeholder: "C'era una volta...", rows: "10" %>
+                </div>
+                <%= f.submit "Ricordalo per sempre", class: "btn btn-primary" %>
+            <% end %> 
+        </div>  
     </div>
     </section>
 </article>

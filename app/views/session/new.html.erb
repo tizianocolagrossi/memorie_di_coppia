@@ -3,11 +3,10 @@
     
     <div class="wrap">
                 
-                <% flash.each do |key, value| %>
-                    <div class="flash <%= key %>"><%= value %></div>
-                <% end %>
-                
                 <div class="slide-top content-center">
+                    <% flash.each do |key, value| %>
+                        <div class="flash <%= key %>"><%= value %></div>
+                    <% end %>
                     <%= form_for( :session, url: login_path) do |f| %>
 
                         <%= f.label :email %>
