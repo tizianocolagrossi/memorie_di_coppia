@@ -8,12 +8,13 @@
           <div class="flex-content">
             <h2><%= micropost.title %></h2>
             <p><%= micropost.content %></p>
+            <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
           </div>
         </div>
       <% else %>
         <h2 class="text-landing "><%= micropost.title %></h2>
         <p class="text-intro "><%= micropost.content %></p>
-        <p class="text-subtitle"> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
+        <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
       <% end %>
     </div>
 </section>
