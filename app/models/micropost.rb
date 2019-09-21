@@ -7,6 +7,6 @@ class Micropost < ApplicationRecord
 
   validates :user_id, presence: true
   validates :title, length: { maximum: 50 }
-  validates :content, presence: true, length: { maximum: 500 }
+  validates :content, presence: true, length: { maximum: 5000 }
 
 end
