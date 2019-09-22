@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.all
   end
 
+  
   def new
     @user = User.new
   end

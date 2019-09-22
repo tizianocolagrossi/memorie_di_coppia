@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
   content: MyText
   user: one
+  title: MyString
+  imagedb: 
 
 two:
-  title: MyString
   content: MyText
   user: two
+  title: MyString
+  imagedb: 
