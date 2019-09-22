@@ -54,6 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #paperclip per upload immagini
 gem 'paperclip', '~> 5.2'
 
+
 group :production do
   gem 'pg'
   gem 'rails_12factor', '0.0.2'
