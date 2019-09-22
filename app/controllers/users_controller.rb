@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.all
   end
 
   def new
@@ -46,15 +47,6 @@ class UsersController < ApplicationController
     def user_params_update
       params.require(:user).permit(:email,
                                   :password, :password_confirmation)
-    end
-
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Perfavore accedi."
-        redirect_to login_url
-      end
     end
 
     # Confirms the correct user.

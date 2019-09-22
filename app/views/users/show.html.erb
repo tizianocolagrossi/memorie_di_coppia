@@ -1,6 +1,6 @@
-<main role='banner'>
-    <article id='webslide'>
-        <section class='slide'>
+<main role='main'>
+    <article id='webslide' class="vertical">
+        <section>
             <header>
                 <div class="wrap">
                     <p>
@@ -14,13 +14,13 @@
             <div class="wrap aligncenter">
                 <p class="text-subtitle">
                     <%= @user.herName %> 
-                    <svg class="fa-heart">
-                        <use xlink:href="#fa-heart"></use>
+                    <svg class="fa-heart-o text-important">
+                        <use xlink:href="#fa-heart-o"></use>
                     </svg>
                     <%= @user.hisName %><br>
                     <%= @user.anniversary %>
                 </p>
-                <h2 class="text-landing"><strong>Ti cielo</strong></h2>
+                
                 <blockquote>
                     <p>
                         "Non assomigli più a nessuna da quando ti amo."
@@ -33,14 +33,25 @@
                     <svg class="fa-plus">
                         <use xlink:href="#fa-plus"></use>
                     </svg>
-                    Aggiungi</h2>crea il nostro oceano</li>
-                    <li><h2>
-                    <svg class="fa-play">
-                        <use xlink:href="#fa-play"></use>
+                    <%= link_to "Aggiungi", new_micropost_path %></h2>crea il nostro oceano. Piano piano goccia per goccia creeremo un oceano di ricordi che farà rabbrividire gli oceani del mondo.</li>
+                    <li class="text-important"><h2>
+                    <svg class="fa-heart-o">
+                        <use xlink:href="#fa-heart-o"></use>
                     </svg>
-                    Ricorda</h2>vediamo quante gocce ci sono nel nostro oceano</li>
+                    Ti cielo</h2>questo sta qui solo per ricordarti meglio quanto ti amo, e la quantita è tantissimo tanto basta vedere il ti cielo sopra.</li>
+                    <li><h2>
+                    <svg class="fa-chevron-down">
+                        <use xlink:href="#fa-chevron-down"></use>
+                    </svg>
+                    <a href="#ricordi">Ricorda</h2>scorri la pagina, vediamo quante gocce ci sono nel nostro oceano. Vediamo quando diventerà troppo lungo da poter essere visto in una sola giornata.</li></a>
                 </ul>
             </div>
         </section>
+        <!-- AGGIUNGERE I RICORDI QUI-->
+        <a name="ricordi"></a>
+        <% if @user.microposts.any? %>
+            <%= render @microposts %>
+        <% end %>
+
     </article>
 </main>
