@@ -1,11 +1,7 @@
 class Micropost < ApplicationRecord
 
-  
-  before_save { self.content_type = imagedb.content_type || nil }
-  before_save { self.filename = sanitize_filename(imagedb.original_filename) || nil }
-  before_save { self.imagedb = imagedb.read || nil }
-  
-  
+  init_data_image(imagedb)
+
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   
@@ -18,6 +14,14 @@ class Micropost < ApplicationRecord
     # Get only the filename, not the whole path (for IE)
     # Thanks to this article I just found for the tip: http://mattberther.com/2007/10/19/uploading-files-to-a-database-using-rails
     return File.basename(filename)
+  end
+
+  def init_data_image(image)
+    if image
+      before_save { self.content_type = imagedb.content_type }
+      before_save { self.filename = sanitize_filename(imagedb.original_filename) }
+      before_save { self.imagedb = imagedb.read }
+    end
   end
 
 end
