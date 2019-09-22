@@ -1,7 +1,6 @@
 <section class="bg-white">
     <div class="wrap">
       <% if micropost.imagedb %>
-      si
         <div class="card-50">
           <figure>
              <img src="<%= url_for(:controller => "microposts", 
@@ -15,7 +14,6 @@
           </div>
         </div>
       <% else %>
-      no
         <h2 class="text-landing "><%= micropost.title %></h2>
         <p class="text-intro "><%= micropost.content %></p>
         <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>

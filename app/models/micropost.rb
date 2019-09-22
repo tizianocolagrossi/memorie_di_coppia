@@ -1,9 +1,10 @@
 class Micropost < ApplicationRecord
 
-  before_save { self.content_type = imagedb.content_type }
-  before_save { self.filename = sanitize_filename(imagedb.original_filename) }
-  before_save { self.imagedb = imagedb.read }
-
+  if imagedb
+    before_save { self.content_type = imagedb.content_type }
+    before_save { self.filename = sanitize_filename(imagedb.original_filename) }
+    before_save { self.imagedb = imagedb.read }
+  end
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   
