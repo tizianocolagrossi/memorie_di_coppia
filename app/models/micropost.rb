@@ -1,6 +1,6 @@
 class Micropost < ApplicationRecord
 
-  if imagedb
+  if imagedb == nil
     before_save { self.content_type = imagedb.content_type }
     before_save { self.filename = sanitize_filename(imagedb.original_filename) }
     before_save { self.imagedb = imagedb.read }
