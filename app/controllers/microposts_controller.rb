@@ -8,21 +8,30 @@ class MicropostsController < ApplicationController
 
     def create
         @micropost = current_user.microposts.build(micropost_params)
+        
         if @micropost.save
             flash[:success] = "Micropost created!"
             redirect_to root_url
         else
-            redirect_to root_url
+            render 'static_pages/home'
         end
     end
   
+    def show
+        @micropost = current_user.microposts.find(params[:id]) 
+        send_data(@micropost.imagedb,
+        :filename => @micropost.filename,
+        :type => @micropost.content_type,
+        :disposition => "inline")
+        end
+
     def destroy
     end
 
     private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :title, :image)
+      params.require(:micropost).permit(:content, :title, :imagedb)
     end
 
   end

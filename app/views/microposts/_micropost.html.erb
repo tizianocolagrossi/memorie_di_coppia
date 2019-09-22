@@ -1,9 +1,12 @@
 <section class="bg-white">
     <div class="wrap">
-      <% if micropost.image.url(:large) != "/images/large/missing.png" %>
+      <% if micropost.imagedb %>
+      si
         <div class="card-50">
           <figure>
-            <%= image_tag micropost.image.url(:large) %>
+             <img src="<%= url_for(:controller => "microposts", 
+                            :action => "show", 
+                            :id => micropost.id) %>" />
           </figure>
           <div class="flex-content">
             <h2><%= micropost.title %></h2>
@@ -12,6 +15,7 @@
           </div>
         </div>
       <% else %>
+      no
         <h2 class="text-landing "><%= micropost.title %></h2>
         <p class="text-intro "><%= micropost.content %></p>
         <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>

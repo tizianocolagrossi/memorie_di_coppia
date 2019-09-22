@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'session#destroy'
   get 'logout' => "session#destroy"
   root :to => 'pages#home'
+  #get 'image/:id' => 'micropost#show'  
   resources :users
 
-  resources :microposts, only: [:create, :destroy, :new]
+  resources :microposts, only: [:create, :destroy, :new, :show]
 
 end

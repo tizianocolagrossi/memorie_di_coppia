@@ -1,12 +1,15 @@
 class CreateMicroposts < ActiveRecord::Migration[5.1]
   def change
     create_table :microposts do |t|
-      t.string :title
       t.text :content
       t.references :user, foreign_key: true
+      t.string :title
+      t.binary :imagedb
+      t.string :content_type
+      t.string :filename
+
 
       t.timestamps
     end
-    add_index :microposts, [:user_id, :created_at]
   end
 end
