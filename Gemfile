@@ -52,7 +52,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #paperclip per upload immagini
-gem "paperclip", ">= 5.2.0"
+gem 'paperclip', '~> 5.2'
+
 
 group :production do
   gem 'pg'
