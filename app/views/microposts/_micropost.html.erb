@@ -7,13 +7,13 @@
       <% if micropost.title != "" && micropost.title != nil %>
       <!--SE HO IL TITOLO MA NO CONTENT MA IMG SI-->
         <% if micropost.date_mem != nil%>
-          <p class="text-subtitle"><%= micropost.date_mem %></p>
+          <p class="text-subtitle">Era il <%= micropost.date_mem %></p>
         <% end %>
         <h2 class="text-landing "><%= micropost.title %></h2>
       <% else %>
       <!--SE NON HO NE TITOLO NE CONTENT MA IMG SI-->
         <% if micropost.date_mem != nil%>
-          <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
+          <p class="text-subtitle slide-bottom content-right">Era il <%= micropost.date_mem %></p>
         <% end %>
       <% end %>
 
@@ -31,9 +31,9 @@
               <div class="flex-content">
                 <% if micropost.date_mem != nil%>
                   <%if micropost.title != nil && micropost.title != "" %>
-                    <p class="text-subtitle"><%= micropost.date_mem %></p>
+                    <p class="text-subtitle"></p>
                   <% else %>
-                    <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
+                    <p class="text-subtitle slide-bottom content-right">Era il <%= micropost.date_mem %></p>
                   <% end %>
                 <% end %>
                 <% if micropost.title != nil && micropost.title !=""%>
@@ -46,7 +46,7 @@
         <% else %>
            <!--SE HO IL CONTENT NO IMG-->
             <% if micropost.date_mem != nil%>
-              <p class="text-subtitle"><%= micropost.date_mem %></p>
+              <p class="text-subtitle">Era il <%= micropost.date_mem %></p>
             <% end %>
             <% if micropost.title != nil && micropost != ""%>
               <h2 class="text-landing "><%= micropost.title %></h2>
