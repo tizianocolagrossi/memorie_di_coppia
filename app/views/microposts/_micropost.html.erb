@@ -1,16 +1,28 @@
 <section class="bg-white">
-    <% if micropost.content == "" || micropost.content == nil %>
+    <% if (micropost.content == "" || micropost.content == nil) &&  micropost.imagedb%>
       <!--SE NON HO IL CONTENT IMMAGINE PERFORZA SULLO SFONDO-->
       <span class="background" style="background-image:url('<%= url_for(:controller => "microposts", 
                                                                         :action => "show", 
                                                                         :id => micropost.id) %>')"></span>
-    <% end %>
-    <div class="wrap">
-      <% if micropost.imagedb %>
-        <% if micropost.title != "" || micropost.title != nil  %>
-            <% if micropost.content != "" || micropost.content != nil%>
-              <!--SE HO UN IMMAGINE CON UN TITOLO E DESCRIZIONE QUI-->
-              <div class="card-50">
+      <% if micropost.title != "" && micropost.title != nil %>
+      <!--SE HO IL TITOLO MA NO CONTENT MA IMG SI-->
+        <% if micropost.date_mem != nil%>
+          <p class="text-subtitle"><%= micropost.date_mem %></p>
+        <% end %>
+        <h2 class="text-landing "><%= micropost.title %></h2>
+      <% else %>
+      <!--SE NON HO NE TITOLO NE CONTENT MA IMG SI-->
+        <% if micropost.date_mem != nil%>
+          <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
+        <% end %>
+      <% end %>
+
+    <% else %>
+     <!--SE HO IL CONTENT-->
+      <div class="wrap">
+        <% if micropost.imagedb %>
+           <!--SE HO IL CONTENT E IMG E VARIA IN BSE AL TITOLO E DATA-->
+           <div class="card-50">
               <figure>
                  <img src="<%= url_for(:controller => "microposts", 
                               :action => "show", 
@@ -18,32 +30,30 @@
               </figure>
               <div class="flex-content">
                 <% if micropost.date_mem != nil%>
-                  <p class="text-subtitle"><%= micropost.date_mem %></p>
+                  <%if micropost.title != nil && micropost.title != "" %>
+                    <p class="text-subtitle"><%= micropost.date_mem %></p>
+                  <% else %>
+                    <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
+                  <% end %>
                 <% end %>
-                <h2><%= micropost.title %></h2>
+                <% if micropost.title != nil && micropost.title !=""%>
+                  <h2><%= micropost.title %></h2>
+                <% end %>
                 <p><%= micropost.content %></p>
                 <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
               </div>
             </div>
-            <% end %>
-            <!--SE HO UN IMMAGINE CON UN TITOLO MA NON DESCRIZIONE QUI-->
+        <% else %>
+           <!--SE HO IL CONTENT NO IMG-->
             <% if micropost.date_mem != nil%>
               <p class="text-subtitle"><%= micropost.date_mem %></p>
             <% end %>
-            <h2 class="text-landing " ><%= micropost.title %></h2>
+            <% if micropost.title != nil && micropost != ""%>
+              <h2 class="text-landing "><%= micropost.title %></h2>
+            <%end%>
+            <p class="text-intro "><%= micropost.content %></p>
+            <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
         <% end %>
-        <!--SE HO SOLO UN IMMAGINE QUI SENZA TITOLO O DESCRIZIONE-->
-        <% if micropost.date_mem != nil%>
-          <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
-        <% end %>
-      <% else %>
-      <!--SE NON HO UN IMMAGINE QUI-->
-        <% if micropost.date_mem != nil%>
-          <p class="text-subtitle"><%= micropost.date_mem %></p>
-        <% end %>
-        <h2 class="text-landing "><%= micropost.title %></h2>
-        <p class="text-intro "><%= micropost.content %></p>
-        <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
 </section>
