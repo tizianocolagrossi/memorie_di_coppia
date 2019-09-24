@@ -7,7 +7,7 @@ class CreateMicroposts < ActiveRecord::Migration[5.1]
       t.binary :imagedb
       t.string :content_type
       t.string :filename
-
+      t.date :date_mem
 
       t.timestamps
     end

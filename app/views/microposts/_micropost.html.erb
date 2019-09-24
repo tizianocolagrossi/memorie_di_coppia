@@ -1,19 +1,46 @@
 <section class="bg-white">
+    <% if micropost.content == "" || micropost.content == nil %>
+      <!--SE NON HO IL CONTENT IMMAGINE PERFORZA SULLO SFONDO-->
+      <span class="background" style="background-image:url('<%= url_for(:controller => "microposts", 
+                                                                        :action => "show", 
+                                                                        :id => micropost.id) %>')"></span>
+    <% end %>
     <div class="wrap">
       <% if micropost.imagedb %>
-        <div class="card-50">
-          <figure>
-             <img src="<%= url_for(:controller => "microposts", 
-                            :action => "show", 
-                            :id => micropost.id) %>" />
-          </figure>
-          <div class="flex-content">
-            <h2><%= micropost.title %></h2>
-            <p><%= micropost.content %></p>
-            <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
-          </div>
-        </div>
+        <% if micropost.title != "" || micropost.title != nil  %>
+            <% if micropost.content != "" || micropost.content != nil%>
+              <!--SE HO UN IMMAGINE CON UN TITOLO E DESCRIZIONE QUI-->
+              <div class="card-50">
+              <figure>
+                 <img src="<%= url_for(:controller => "microposts", 
+                              :action => "show", 
+                              :id => micropost.id) %>" />
+              </figure>
+              <div class="flex-content">
+                <% if micropost.date_mem != nil%>
+                  <p class="text-subtitle"><%= micropost.date_mem %></p>
+                <% end %>
+                <h2><%= micropost.title %></h2>
+                <p><%= micropost.content %></p>
+                <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>
+              </div>
+            </div>
+            <% end %>
+            <!--SE HO UN IMMAGINE CON UN TITOLO MA NON DESCRIZIONE QUI-->
+            <% if micropost.date_mem != nil%>
+              <p class="text-subtitle"><%= micropost.date_mem %></p>
+            <% end %>
+            <h2 class="text-landing " ><%= micropost.title %></h2>
+        <% end %>
+        <!--SE HO SOLO UN IMMAGINE QUI SENZA TITOLO O DESCRIZIONE-->
+        <% if micropost.date_mem != nil%>
+          <p class="text-subtitle slide-bottom content-right"><%= micropost.date_mem %></p>
+        <% end %>
       <% else %>
+      <!--SE NON HO UN IMMAGINE QUI-->
+        <% if micropost.date_mem != nil%>
+          <p class="text-subtitle"><%= micropost.date_mem %></p>
+        <% end %>
         <h2 class="text-landing "><%= micropost.title %></h2>
         <p class="text-intro "><%= micropost.content %></p>
         <p> Posted <%= time_ago_in_words(micropost.created_at) %> ago.</p>

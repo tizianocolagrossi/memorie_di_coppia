@@ -31,7 +31,7 @@ class MicropostsController < ApplicationController
     private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :title, :imagedb)
+      params.require(:micropost).permit(:content, :title, :imagedb, :date_mem)
     end
 
   end

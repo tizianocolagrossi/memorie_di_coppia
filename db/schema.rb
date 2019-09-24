@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190922103826) do
     t.binary "imagedb"
     t.string "content_type"
     t.string "filename"
+    t.date "date_mem"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_microposts_on_user_id"

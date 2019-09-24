@@ -7,6 +7,9 @@
                 <%= f.label :title, "Titolo" %>
                 <%= f.text_field :title %>
                 
+                <%= f.label :data_ricordo, "Data del ricordo (opzionale)" %>
+                <%= f.date_field :date_mem, class: 'form-control' %>
+
                 <%= f.label :imagedb, "Immagine" %>
                 <%= f.file_field :imagedb, accept: "image/*" %>
                 
