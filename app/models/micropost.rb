@@ -7,7 +7,7 @@ class Micropost < ApplicationRecord
   
   validates :user_id, presence: true
   validates :title, length: { maximum: 50 }
-  validates :content, presence: true, length: { maximum: 5000 }
+  validates :content, length: { maximum: 5000 }
 
   private
     def sanitize_filename(filename)
