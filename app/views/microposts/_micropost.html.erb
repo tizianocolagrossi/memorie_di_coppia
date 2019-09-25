@@ -4,6 +4,7 @@
       <span class="background" style="background-image:url('<%= url_for(:controller => "microposts", 
                                                                         :action => "show", 
                                                                         :id => micropost.id) %>')"></span>
+      <div class="wrap">
       <% if micropost.title != "" && micropost.title != nil %>
       <!--SE HO IL TITOLO MA NO CONTENT MA IMG SI-->
         <% if micropost.date_mem != nil%>
@@ -16,7 +17,7 @@
           <p class="text-subtitle slide-bottom content-right">Era il <%= micropost.date_mem %></p>
         <% end %>
       <% end %>
-
+    </div>
     <% else %>
      <!--SE HO IL CONTENT-->
       <div class="wrap">
