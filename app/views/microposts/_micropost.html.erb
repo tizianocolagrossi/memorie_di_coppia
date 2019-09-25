@@ -8,13 +8,13 @@
       <% if micropost.title != "" && micropost.title != nil %>
       <!--SE HO IL TITOLO MA NO CONTENT MA IMG SI-->
         <% if micropost.date_mem != nil%>
-          <p class="text-subtitle"><code>Era il <%= micropost.date_mem %></code></p>
+          <p class="text-subtitle">Era il <%= micropost.date_mem %></p>
         <% end %>
-        <h2 class="text-landing "><code><%= micropost.title %></code></h2>
+        <h2 class="text-landing "><%= micropost.title %></h2>
       <% else %>
       <!--SE NON HO NE TITOLO NE CONTENT MA IMG SI-->
         <% if micropost.date_mem != nil%>
-          <p class="text-subtitle slide-bottom content-right"><code>Era il <%= micropost.date_mem %></code></p>
+          <p class="text-subtitle slide-bottom content-right">Era il <%= micropost.date_mem %></p>
         <% end %>
       <% end %>
     </div>
