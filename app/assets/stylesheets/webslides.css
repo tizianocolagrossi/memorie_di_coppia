@@ -3151,6 +3151,9 @@ Slides - Backgrounds <section class="bg-primary">
 .bg-black {
   background-color: #111; }
 
+.bg-black-a {
+  background-color: rgba(0, 0, 0, 0.4); }
+
 .bg-black-blue {
   background-color: #123; }
 
